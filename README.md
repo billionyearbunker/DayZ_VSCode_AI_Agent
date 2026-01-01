@@ -198,6 +198,14 @@ By default, agent participants are "blind" to your files for security reasons. T
 # About the Knowledge-Base Files
 I created these myself using Gemini 3. I'm not clear on where the source of truth was for these answers, but I only caught like 3-4 things that were totally off. I tried to start off at a foundational level by looking at the core server file structure, the basic game mechanics, and the stats on the individual items. I requested that Gemini format each markdown file as a prompt for training an AI agent. After a little tweaking, I cloned the set so there are two "tiers" of knowledge; a vanilla tier that will never change, it's the baseline for DayZ, and a custom tier that reflects the changes I will make to my custom flavor of DayZ server. This way I also have a frame of reference as to the jumping off point.
 
-The plan is to update the custom folder to refelct the changes that I'm making and go from there. 
+The plan is to update the custom folder to refelct the changes that I'm making and go from there. Here are some example prompts:
+Server File Structure Prompt:
+- `Can you create an extremely detailed overview of the file structure and setup of a dayz server including folder structure, dependencies, oddities in the language, mission files, profile files, mod structures, etc. This should be formatted for an AI agent in markdown so I can copy it into a new md file.`
+
+Mechanics Prompt:
+- `Can you write me an extremely detailed overview of the fishing mechanics in the game DayZ? It needs to be as detailed as possible and written for an AI agent as part of a knowledge base.`
+
+Stats Prompt:
+- `"Create a table for the WEAPONS in DayZ with these column headers: | Name | Class Name | Size | Weight | Sonic | Velocity | Air Friction | Penetration | Dispersion | Barrel Length | Health | Blood | Shock | Location | Rarity | Description | Variants |"`
 
 Like with all my stuff these are free to use how you feel fit, but I would love to collaborate with you and make this better! Fork, tweak, commit.
