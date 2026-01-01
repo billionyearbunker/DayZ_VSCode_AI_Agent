@@ -1,39 +1,37 @@
-DayZ Cherno AI Developer Agent for Visual Studio Code
+# DayZ Cherno AI Developer Agent for Visual Studio Code
+
 This repository contains the configuration files needed to turn Visual Studio Code's GitHub Copilot into a specialized, context-aware AI developer for DayZ servers, specifically focused on the Chernarus map.
 
 By setting up this agent, you get an AI assistant that:
 
-Prioritizes your local documentation over general internet knowledge.
+- Prioritizes your local documentation over general internet knowledge.
+- Understand the specific coordinates and locations of Chernarus.
+- Can write safer, context-aware Enforce Script (.c).
+- Respects a strict "Hierarchy of Truth", prioritizing your custom server changes over vanilla data.
 
-Understand the specific coordinates and locations of Chernarus.
+## Prerequisites
 
-Can write safer, context-aware Enforce Script (.c).
-
-Respects a strict "Hierarchy of Truth", prioritizing your custom server changes over vanilla data.
-
-Prerequisites
 Before you begin, ensure you have the following:
 
-Visual Studio Code (Latest stable version).
+- **Visual Studio Code** (Latest stable version).
+- **GitHub Copilot Subscription**: You must have a Copilot Pro or Copilot Business subscription that includes access to advanced models like Claude 3.5 Sonnet and the Custom Agents feature.
+- **VS Code Extensions**: Ensure the following extensions are installed and enabled:
+  - GitHub Copilot
+  - GitHub Copilot Chat
 
-GitHub Copilot Subscription: You must have a Copilot Pro or Copilot Business subscription that includes access to advanced models like Claude 3.5 Sonnet and the Custom Agents feature.
+## Setup Tutorial
 
-VS Code Extensions: Ensure the following extensions are installed and enabled:
-
-GitHub Copilot
-
-GitHub Copilot Chat
-
-Setup Tutorial
 Follow these steps exactly to configure your workspace.
 
-Step 1: Create the Workspace Structure
+### Step 1: Create the Workspace Structure
 
 The agent relies on a very specific folder structure to know where to look for information and where its definitions live.
 
-Open your DayZ server project folder in VS Code.
+1. Open your DayZ server project folder in VS Code.
 
-Create the following directories at the root of your project:
+2. Create the following directories at the root of your project:
+
+```
 /Your-DayZ-Project-Root
   │
   ├── .github/                 <-- Hidden folder for Copilot configs
@@ -42,24 +40,21 @@ Create the following directories at the root of your project:
   └── knowledge-base/          <-- Your "Source of Truth" documentation
       ├── 00-vanilla-reference/ <-- Baseline game info (optional but recommended)
       └── 01-custom-server/     <-- YOUR custom changes (Highest Priority)
+```
 
-Tip: On Windows, the .github folder might be hidden by default. Ensure you can see hidden files if you need to navigate manually.
+**Tip:** On Windows, the `.github` folder might be hidden by default. Ensure you can see hidden files if you need to navigate manually.
 
-Step 2: Populate the Knowledge Base
+### Step 2: Populate the Knowledge Base
 
 The AI is only as smart as the data you give it.
 
-Gather Data: Collect your server rules, loot tables in Markdown tables, custom scripts explanations, and general notes.
+- **Gather Data:** Collect your server rules, loot tables in Markdown tables, custom scripts explanations, and general notes.
+- **Organize:**
+  - Put baseline DayZ information (e.g., vanilla weapon stats) into `knowledge-base/00-vanilla-reference/`.
+  - Put your server's specific changes (e.g., custom trader zones, modded item lists, rule changes) into `knowledge-base/01-custom-server/`.
+- **Format:** Ensure your files are readable text or Markdown (.md). Markdown tables are highly recommended for loot stats.
 
-Organize:
-
-Put baseline DayZ information (e.g., vanilla weapon stats) into knowledge-base/00-vanilla-reference/.
-
-Put your server's specific changes (e.g., custom trader zones, modded item lists, rule changes) into knowledge-base/01-custom-server/.
-
-Format: Ensure your files are readable text or Markdown (.md). Markdown tables are highly recommended for loot stats.
-
-Step 3: Configure Global Copilot Instructions
+### Step 3: Configure Global Copilot Instructions
 
 This file guides the general @workspace chat to respect your knowledge base hierarchy.
 
@@ -92,7 +87,7 @@ Paste the following content exactly:
 ---
 name: dayz-dev
 description: Expert DayZ Server Developer (Chernarus Focus)
-model: claude-3.5-sonnet
+model: claude-4.5-sonnet
 ---
 
 # Identity
