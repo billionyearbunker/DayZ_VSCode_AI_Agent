@@ -56,13 +56,15 @@ The AI is only as smart as the data you give it.
 
 ### Step 3: Configure Global Copilot Instructions
 
-This file guides the general @workspace chat to respect your knowledge base hierarchy.
+This file guides the general `@workspace` chat to respect your knowledge base hierarchy.
 
-Create a new file: .github/copilot-instructions.md
+1. Create a new file: `.github/copilot-instructions.md`
+   
+   (Note: This goes directly inside `.github/`, NOT inside the `agents/` subfolder).
 
-(Note: This goes directly inside .github/, NOT inside the agents/ subfolder).
+2. Paste the following content exactly:
 
-Paste the following content exactly:
+```markdown
 # KNOWLEDGE BASE HIERARCHY (CRITICAL)
 You have access to a local `knowledge-base/` directory which contains distinct types of data. You must respect this hierarchy when answering questions about this project:
 
@@ -76,18 +78,21 @@ You have access to a local `knowledge-base/` directory which contains distinct t
 
 3.  **TIER 3 (General Knowledge):** Your training data/Internet.
     * Use this only if the answer is not found in Tier 1 or Tier 2.
-  
-Step 4: Create the "DayZ-Dev" Specialist Agent
+```
+
+### Step 4: Create the "DayZ-Dev" Specialist Agent
 
 This file defines the specific persona, model (Claude), and specialized skills of your agent.
 
-Create a new file: .github/agents/dayz-dev.agent.md
+1. Create a new file: `.github/agents/dayz-dev.agent.md`
 
-Paste the following content exactly:
+2. Paste the following content exactly:
+
+```markdown
 ---
 name: dayz-dev
 description: Expert DayZ Server Developer (Chernarus Focus)
-model: claude-4.5-sonnet
+model: claude-3.5-sonnet
 ---
 
 # Identity
@@ -117,55 +122,66 @@ When provided access to the codebase, you strictly follow this "Source of Truth"
 # Response Style
 - Do not lecture on safety unless the requested code will cause an immediate server crash.
 - When referencing local data, cite the specific filename (e.g., "According to `custom-economy.md`...").
+```
 
-Step 5: Activate the Configuration
+### Step 5: Activate the Configuration
 
 For VS Code to recognize the new agent and folder structures, you must reload the window.
 
-Press Ctrl + Shift + P (Windows/Linux) or Cmd + Shift + P (Mac).
+1. Press **Ctrl + Shift + P** (Windows/Linux) or **Cmd + Shift + P** (Mac).
 
-Type "Reload Window".
+2. Type "Reload Window".
 
-Select Developer: Reload Window.
+3. Select **Developer: Reload Window**.
 
-Wait 10-15 seconds for the Copilot icon in the bottom right to finish initializing.
+4. Wait 10-15 seconds for the Copilot icon in the bottom right to finish initializing.
 
-Usage Workflow
+## Usage Workflow
+
 You now have two distinct ways to interact with Copilot.
 
-1. The Librarian: @workspace
+### 1. The Librarian: @workspace
 
 Use this for general navigation and finding files. It knows where things are but isn't the deep Cherno expert.
 
-"Where is the file containing M4 stats?"
+- "Where is the file containing M4 stats?"
+- "Summarize the contents of the 01-custom-server folder."
 
-"Summarize the contents of the 01-custom-server folder."
-
-2. The Specialist: @dayz-dev
+### 2. The Specialist: @dayz-dev
 
 Use this for coding, specific DayZ logic, and getting answers based on your "Hierarchy of Truth."
 
-⚠️ THE GOLDEN RULE ⚠️
+#### ⚠️ THE GOLDEN RULE ⚠️
 
-By default, agent participants are "blind" to your files for security reasons. To give @dayz-dev eyes to read your knowledge base, you must append #codebase to your prompt.
+By default, agent participants are "blind" to your files for security reasons. To give `@dayz-dev` eyes to read your knowledge base, you must append `#codebase` to your prompt.
 
-Incorrect Usage:
+**Incorrect Usage:**
 
-@dayz-dev How much damage does the M4 do on my server? (Result: It will guess based on internet data because it can't see your files.)
+```
+@dayz-dev How much damage does the M4 do on my server?
+```
+(Result: It will guess based on internet data because it can't see your files.)
 
-Correct Usage:
+**Correct Usage:**
 
-@dayz-dev How much damage does the M4 do on my server? #codebase (Result: It searches your knowledge base, finds the custom file, prioritizes it, and gives the exact answer.)
+```
+@dayz-dev How much damage does the M4 do on my server? #codebase
+```
+(Result: It searches your knowledge base, finds the custom file, prioritizes it, and gives the exact answer.)
 
-Other Examples:
+**Other Examples:**
 
-@dayz-dev Write an Enforce Script function to spawn a trader crate at Green Mountain. #codebase
+- `@dayz-dev Write an Enforce Script function to spawn a trader crate at Green Mountain. #codebase`
+- `@dayz-dev Compare the M4 stats between #file:vanilla-m4.md and #file:custom-m4.md`
 
-@dayz-dev Compare the M4 stats between #file:vanilla-m4.md and #file:custom-m4.md
+## Troubleshooting
 
-Troubleshooting
-Problem: I type @ in chat but don't see dayz-dev in the list. Solution: Ensure the file path is exactly .github/agents/dayz-dev.agent.md. Perform the "Developer: Reload Window" step again.
+**Problem:** I type @ in chat but don't see dayz-dev in the list.  
+**Solution:** Ensure the file path is exactly `.github/agents/dayz-dev.agent.md`. Perform the "Developer: Reload Window" step again.
 
-Problem: The agent says "I don't have access to your files" or gives generic internet answers. Solution: You forgot the Golden Rule. Add #codebase to the end of your prompt so it knows to search your local files.
+**Problem:** The agent says "I don't have access to your files" or gives generic internet answers.  
+**Solution:** You forgot the Golden Rule. Add `#codebase` to the end of your prompt so it knows to search your local files.
 
-Problem: The agent isn't finding files I just added to the knowledge base. Solution 1: Check your .gitignore file. Ensure it is not ignoring knowledge-base/ or *.md files. Copilot will not read ignored files by default. Solution 2: Run the command palette command: GitHub Copilot: Index Workspace.
+**Problem:** The agent isn't finding files I just added to the knowledge base.  
+**Solution 1:** Check your `.gitignore` file. Ensure it is not ignoring `knowledge-base/` or `*.md` files. Copilot will not read ignored files by default.  
+**Solution 2:** Run the command palette command: **GitHub Copilot: Index Workspace**.
