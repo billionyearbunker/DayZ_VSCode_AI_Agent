@@ -9,7 +9,9 @@ A couple notes about this agent:
 
 This is just a v1, I plan on tinkering with it and expanding it beyond Cherno at some point as the main goal of this project is to develop a new Bandlands server when it drops later this year.
 
-By setting up this agent, you get an AI assistant that:
+# What Is This Exactly?
+
+## By setting up this agent, you get an AI assistant that:
 
 - Prioritizes your local documentation over general internet knowledge.
 - Understand the specific coordinates and locations of Chernarus.
@@ -192,3 +194,10 @@ By default, agent participants are "blind" to your files for security reasons. T
 **Problem:** The agent isn't finding files I just added to the knowledge base.  
 **Solution 1:** Check your `.gitignore` file. Ensure it is not ignoring `knowledge-base/` or `*.md` files. Copilot will not read ignored files by default.  
 **Solution 2:** Run the command palette command: **GitHub Copilot: Index Workspace**.
+
+# About the Knowledge-Base Files
+I created these myself using Gemini 3. I'm not clear on where the source of truth was for these answers, but I only caught like 3-4 things that were totally off. I tried to start off at a foundational level by looking at the core server file structure, the basic game mechanics, and the stats on the individual items. I requested that Gemini format each markdown file as a prompt for training an AI agent. After a little tweaking, I cloned the set so there are two "tiers" of knowledge; a vanilla tier that will never change, it's the baseline for DayZ, and a custom tier that reflects the changes I will make to my custom flavor of DayZ server. This way I also have a frame of reference as to the jumping off point.
+
+The plan is to update the custom folder to refelct the changes that I'm making and go from there. 
+
+Like with all my stuff these are free to use how you feel fit, but I would love to collaborate with you and make this better! Fork, tweak, commit.
