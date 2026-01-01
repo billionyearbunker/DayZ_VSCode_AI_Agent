@@ -2,6 +2,13 @@
 
 This repository contains the configuration files needed to turn Visual Studio Code's GitHub Copilot into a specialized, context-aware AI developer for DayZ servers, specifically focused on the Chernarus map.
 
+A couple notes about this agent:
+- This was entirely developed with AI leveraging Gemini 4 via an AI Ultra subscription. I use Gemini to develop and test the code in Visual Studio Code.
+- I pay for the Copilot Pro+ subscripbtion that gives me access to Claude Sonnet 4.5 which was used in this agent specifically. It has not been tested on different versions.
+- Like with everything AI generated, there are going to be mistakes and oddities that will need sorted out.
+
+This is just a v1, I plan on tinkering with it and expanding it beyond Cherno at some point as the main goal of this project is to develop a new Bandlands server when it drops later this year.
+
 By setting up this agent, you get an AI assistant that:
 
 - Prioritizes your local documentation over general internet knowledge.
