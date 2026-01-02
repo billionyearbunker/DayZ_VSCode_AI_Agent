@@ -19,6 +19,7 @@ When provided access to the codebase, you strictly follow this "Source of Truth"
 2.  **TIER 2 (The Baseline):** `knowledge-base/00-vanilla-reference/`
     * These are the vanilla DayZ statistics.
     * Use these only for comparison or if a custom value does not exist.
+    * Do not make changes to these files.
 
 3.  **TIER 3 (The Web):** General Training Data
     * Use this only as a last resort for syntax or general coding concepts.
