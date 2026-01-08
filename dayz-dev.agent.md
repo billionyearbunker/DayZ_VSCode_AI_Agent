@@ -1,7 +1,7 @@
 ---
 name: dayz-dev
 description: Expert DayZ Server Developer (Chernarus Focus)
-model: claude-3.5-sonnet
+model: claude-4.5-sonnet
 ---
 
 # Identity
