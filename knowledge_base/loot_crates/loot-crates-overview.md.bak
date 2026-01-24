@@ -1,0 +1,162 @@
+Instruc on Guide 
+Mod Version : 1.06 
+by CJ187 and Hunterz 
+Latest Changes : 30th Nov. 2025 
+Installa on: 
+Install the mod like every other mod and start the Game with               -mod=@CJ187-Lootchest... 
+A er first me the server will create a Mod-Se ngs folder at: 
+DayZServer/profiles/   
+There you will find the CJ_LootChests folder with these files inside: - LootChests_LOG.log - LootChests_V106.json - LootChestsTools_V106.json 
+Lets start with the Config explana ons: 
+LootChest_V106.json: 
+"EnableDebug": 0, 
+Toggle Logfiles ( 0 = minimalized // 1 = detailed ).  
+"DeleteLogs": 0, 
+Toggle automa c cleaning Logfiles a er Restart ( 0 = dont clean // 1 = clean ). 
+"MaxSpareMags": 3, 
+Set how much Spare Magazines will be possible when predifinied Weapon will be in LootChest ( 0-999 ).  
+"RandomQuan ty": 0, 
+Toggle random filles items ( 0 = off // 1 = on )  
+This will affect all items what have quan ty 
+( food, drinks, loose ammo, magazines, bandages, loose nails, sewing kits, ect... )  
+Next part “LootChestsLoca ons“ will contains all Informa ons about 
+your Lootchests... 
+"name": "Police_Sta on", 
+Name of the Event ( you can name them like you want, but never use same name twice! ). 
+"number": 2, 
+How many Lootchest you want to spawn in this Event.  
+"pos": [ 
+"10159.65 248.12 5535.25|73.00 0.00 0.00", 
+"11171.11 297.69 7665.23|55.00 0.00 0.00", 
+"13727.68 316.12 8927.63|75.00 0.00 0.00", 
+"12926.83 10.55 10186.83|22.00 0.00 0.00“ 
+], 
+all possible Posi ons with rota ons are listed here. 
+do not set less coordinates than your “number“ of Lootchests! 
+PLEASE beware correct formata on in this sec on!!! 
+"X Y Z|Y P R" without commas between the numbers!!! 
+If you use more coordinates than your “number“ of Lootchests, 
+the Lootchests will be spawn random at these coordinates! 
+"keyclass": "CJ_Key1", 
+Matching Key to unlock this crate 
+( If you want an unlocked Lootchest, then you need to choose : "keyclass": "" ). 
+Here are only Keys allowed, do not enter other classnames!!!  
+"openable": 0, 
+Set how this Lootchest can be opened when it spawn locked: 
+( 0 = key only! / 1 = Key and Lockpick only! / 2 = Key, Lockpick and Tools ).  
+"chest": [ 
+"CJ_LootChest_Grey_Small", 
+"CJ_LootChest_Grey_Medium", 
+"CJ_LootChest_Grey_Large" 
+], 
+List of possible crates what can spawn on this event.  
+You can ente ras many Lootchests as you like, the selec on will be random for each one. 
+"lootrandomize": 0.5, 
+Set the Chance for each Item to NOT spawn in this Lootchest to increase randomiza on: 
+Eg.: 
+0.5 = 50% chance for each Item to NOT be in the Lootchest.                         
+1.0 = 100% chance for each Item to NOT be in the Lootchest.  (Chest will be empty)  
+0.0 = 0% chance for each Item to NOT be in the Lootchest. (all items will be in the Chest)  
+"light": 0, 
+Set lightsource inside the opened crate  
+( 0 = no light / 1 = light ).  
+"loot": [ 
+"MP5k", 
+"Mag_MP5_30Rnd", 
+"AmmoBox_9x19_25rnd", 
+"LC_Table_Weapons_Police", 
+"LC_Table_Magazines_Police", 
+"LC_Table_Ammo_Police", 
+"LC_predefined_UMP" 
+] 
+List of possible loot inside the crates… 
+you can use *classnames* of items, *LC_Tables* for more randomiza on and, *LC_predifinied* Weapons.  
+How Lootchest spawn Items? 
+The Lootchest will always take all Entrys from this List, depending on the “lootrandomize“ factor… 
+if you add a „*LC_Table* in this List, the Lootchest will ALWAYS pick ONE random item from this Table! 
+If you want eg. 5 Items form a specific *LC_Table* , you need to add this one mul ple mes! 
+I recomend to add large Items or Weapons in the top sec on of the list, because these need alot of space!  
+Next part “ LCPredefinedWeapons“ will contains all Informa ons 
+about your already assembled Weapon Presets... 
+"defname": "LC_predefined_AKM", 
+Name of Weaponpreset… 
+Can be custom but MUST beginn with "LC_predefined_". 
+"weapon": "AKM", 
+classname of the weapon. 
+( Must be type Weapon! No Gear! ) 
+"magazine": "Mag_AKM_30Rnd", 
+classname of magazine in weapon  
+( "magazine": "", = no magazine, eg for Shotguns ). 
+"a achments": [ 
+"AK_FoldingB stck", 
+"AK_RailHndgrd", 
+"UniversalLight", 
+"AK_Suppressor" 
+]  
+classnames of a achments on weapon. 
+( Only for WeaponA achments, no Op cs! ). 
+"op c": "PSO1Op c", 
+classname of Op c on weapon 
+( If you dont want ho have an Op c, use "op c": "" )  
+"op c": "PSO1Op c", 
+classname of Op c on weapon 
+( If you dont want ho have an Op c, use "op c": "" ) 
+"op cba ery": 1 
+ONLY when your Weapon have an Op c! 
+( 0 = Weapon have no op c or no Ba ery in Op c! / 1= Ba ery inside op c ). 
+Next part “ LootCategories“ will contains all Informa ons about your 
+random Loot Tables...  
+"name": "LC_Table_Tools",  
+or 
+"name": "LC_Table_Weapons_Police", 
+Tables for more randomiza on, you can create your custom Tables, they always MUST begin with LC_Table_  
+Important: 
+for all kind of Items, clothing, tools, cosumables you MUST use “LC_Table_       
+only for all kind of Firearms you MUST use "LC_Table_Weapons_      "  
+"Loot": [ 
+" AKM", 
+"LC_predefined_AK74", 
+"LC_predefined_AK101" 
+],  
+Loot and Presets in this Table  
+( choose classnames of items or weapon-presets for custom mounted weapons ). 
+Each me a Table is added in Lootchest, it will pick ONE random Item out o fit!  
+“   
+LootChestsTools_V106.json: 
+The last part “ LCTools“ will contains all Informa ons how the Keys 
+and Tools are working... 
+Important! 
+Do not remove any of the Tools or Keys from the Default config!!! 
+You can not add other Tools without LootChest-Compa bility!  
+"name": "SledgeHammer", 
+classname of the tool 
+( only Sledgehammer, Crowbar and Lockpick are supported! ). 
+"me": 1, 
+how long in seconds it takes to unlock the LootChest  
+Only Tools are supported! Keys always need 3 seconds! 
+( -1 deac vate this op on for all LootChests! ). 
+"dmg": 33, 
+how much damage in % the tool take when you unlocked a Lootchest.  
+( If you want a Tool or Key be usable only once, set “dmg“:100 )  
+"desc": "NAME of KEY|DESCRIPTION of KEY" 
+here you can change Name and Descrip on of the Keys only!  
+Important:   
+Eg.:           
+You MUST use these type of entry: "name|descrip on" 
+So you can  customize the Keys to give players hints… 
+"Red Key|This key will open a crate hidden somewhere at the military airfield." 
+Now i will give you some “dirty work-arounds“ to make the mod 
+some kind of more randomness... 
+Example 1: 
+You dont want to have each Restart the same amount of Lootchests? 
+Eg: You have a Building with 5 possible Loca ons and want 1-3 
+Lootchests… 
+Then add 2 more Loca ons far outside o he Map boarder, eg 
+“-10000 0 -10000|0 0 0“, 
+So 2 Chests will have the chance not to spawn inside the Building. 
+So the Players cant be 100% sure to find every me all Chests… 
+Example 2: 
+You want have a Table with one very rare item in it and a very low 
+chance to get this item? 
+Eg: You want to have a Food-Chest with 90% apples and 10% Rice? 
+Easy! Add in the Table the Apple 9 mes and the Rice only once… 

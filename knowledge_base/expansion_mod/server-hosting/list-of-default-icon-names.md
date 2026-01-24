@@ -1,0 +1,199 @@
+# List of Default Icon Names
+
+List of the default Expansion icon names for any Expansion settings like market, map marker, notification, quests.
+
+You can find all the icon paths here: https://github.com/salutesh/DayZ-Expansion-Scripts/blob/experimental/DayZExpansion/Core/Scripts/3_Game/DayZExpansion_Core/ExpansionIcons.c#L40
+
+---
+
+## Icon Names
+
+- Ambush
+- Animal Skull
+- Apple
+- Apple Core
+- Arrows
+- Axe
+- Arrow
+- Airdrop
+- Anomaly
+- Backpack
+- Bandage
+- Bandit
+- Batteries
+- Berries
+- Binoculars
+- Bolt
+- Bonfire
+- Bottle
+- Bow
+- Base
+- Boat
+- Book 1
+- Book 2
+- Broken Lighter
+- Bear
+- Car
+- Car 2
+- Craft
+- Can Of Beans Big
+- Can Of Beans Small
+- Car Keys
+- Carrot
+- Chain Saw
+- Chicken
+- Chocolate
+- Cigarets
+- Circuit Board
+- Cloth
+- Compass
+- Corn
+- Crowbar
+- Cow
+- Claw
+- Coins
+- Coins 2
+- Codelock
+- Deliver
+- Dinosaur Skull
+- Dry Wood
+- Drip
+- Ear
+- Eye
+- Error
+- Exclamationmark
+- Ellipse
+- Eatable Flowers
+- Electrical Tape
+- Empty Can
+- Fishing
+- Fireplace
+- Fish
+- Flare
+- Flare Gun
+- Flare Gun Ammo
+- Flashlight
+- Fox
+- Frying Pan
+- Grab
+- Group
+- Gas
+- Gas Mask
+- Golf Club
+- Goose
+- Grenade
+- Guitar
+- Gun
+- Gun Bullets
+- Heart
+- Hook
+- Helicopter
+- Hammer
+- Herbal Medicine
+- Home Made Grenade
+- Human Skull
+- Info
+- Infected 1
+- Infected 2
+- Insect
+- Knife
+- Kitchen Knife
+- Kitchen Knife Big
+- Ladder
+- Lantern
+- Lighter
+- Menu
+- Marker
+- Map
+- Map Marker
+- Moon
+- Machette
+- Matches
+- Medic Box
+- Mushrooms
+- Note
+- Nails
+- Open Hand
+- Orientation
+- Options
+- Pen
+- Persona
+- Pill
+- Paper Map
+- Paper
+- Pills
+- Pipe Wrench
+- Powder
+- Pumpkin
+- Questionmark
+- Questionmark 2
+- Radiation
+- Radio
+- Rabbit
+- Racoon
+- Radio
+- Rat
+- Rock 1
+- Rock 2
+- Rope
+- Skull 1
+- Skull 2
+- Skull 3
+- Star
+- Sun
+- Snow
+- Square
+- Shield
+- Saw
+- Scrap Metal
+- Screwdriver
+- Shotgun
+- Shotgun Bullets
+- Shovel
+- Soda
+- Soldier
+- Status
+- Territory
+- Trader
+- Tent
+- Thermometer
+- Tent
+- Vehicle Crash
+- Water 1
+- Water 2
+- Walkie Talkie
+- Water Jug
+- Wild Pork
+- Worms
+- Three Stick
+- Sleeping Bag
+- Slingshot
+- Molotov
+- Lizard
+- Cooked Meat 1
+- Cooked Meat 2
+- Cooked Meat 3
+- Collection Of Bolts
+- Collection Of Sticks 1
+- Collection Of Sticks 2
+- Collection Of Sticks 3
+- Collection Of Sticks 4
+- Discord
+- Reddit
+- Steam
+- GitHub
+- Homepage
+- Forums
+- Twitter
+- YouTube
+- Patreon
+- Guilded
+- PayPal
+- Cross
+- Battery Full
+- Battery Med
+- Battery Low
+- Battery Empty
+- Clock Blank
+- Expansion
+- Expansion B/W

@@ -1,0 +1,200 @@
+# Map Settings
+
+**Unlike most other settings that may not be map-specific, you can find the `MapSettings.json` in your `mpmission\dayzOffline.<mapname>\expansion\settings` folder.**
+
+## Configuration Parameters
+
+### **`m_Version`**
+- **Type:** `Integer`
+- **Description:** Contains the current setting version number, never change this value unless you really know what you are doing as it's used internally for automatic conversion of old settings whenever we change something.
+
+---
+
+### **`EnableMap`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = Will use the vanilla map UI (white map)
+  - `1` = Will use the Expansion map UI (colored map)
+
+---
+
+### **`UseMapOnMapItem`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The default vanilla map UI will be used when using the map item "open map" action
+  - `1` = The Expansion map UI will be used when using the map item "open map" action
+
+---
+
+### **`ShowPlayerPosition`**
+- **Type:** `Integer`
+- **Values:**
+  - `0` = The player will not have a marker on his location
+  - `1` = The player will have a marker on the map on his exact location. In short, a "you are here" marker
+  - `2` = The player will have a marker on the map on his exact location if the player has a compass in his inventory or his hands
+
+---
+
+### **`ShowMapStats`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player won't be able to know the XYZ position of a marker
+  - `1` = The player will be able to know the XYZ position of a marker with the marker list or by holding SHIFT when his mouse hovers over a marker on the map
+
+---
+
+### **`NeedPenItemForCreateMarker`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player doesn't need a Pen to create markers on the map
+  - `1` = The player needs a Pen in his inventory to create markers on the map
+
+---
+
+### **`NeedGPSItemForCreateMarker`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player doesn't need a GPS to create markers on the map
+  - `1` = The player needs a GPS in his inventory to create markers on the map
+
+---
+
+### **`CanCreateMarker`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player won't be able to create any markers
+  - `1` = Allow the player to create markers on the map
+
+---
+
+### **`CanCreate3DMarker`**
+- **Type:** `Bool`
+- **Note:** Requires `CanCreateMarker` to be enabled (set to `1`)
+- **Values:**
+  - `0` = The player will not be able to create 3D markers
+  - `1` = Allow the player to create 3D markers on the map
+
+---
+
+### **`CanOpenMapWithKeyBinding`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player will have to open a physical item map to see the map
+  - `1` = The player can open the map with a keybind instead of interacting with the physical map ("Open map" action)
+
+---
+
+### **`ShowDistanceOnPersonalMarkers`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The personal markers won't show their distance from the player
+  - `1` = The distance will be displayed under every personal 3D markers
+
+---
+
+### **`EnableHUDGPS`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player will be only able to open the map with M
+  - `1` = The player will be able to enabled the GPS HUD by Holding N and to switch modes by tapping N. He will also be able to open the map with M
+
+---
+
+### **`NeedGPSItemForKeyBinding`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = You don't need the GPS item to open the map (M) or the GPS UI (hold N and tap N to switch modes)
+  - `1` = You need the physical GPS item to open the map (M) or the GPS UI (hold N and tap N to switch modes)
+
+---
+
+### **`NeedMapItemForKeyBinding`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = You don't need the map item to open the map (M)
+  - `1` = You need the physical map item to open the map (M)
+
+---
+
+### **`EnableServerMarkers`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = All the server markers will be disabled and invisible on the map
+  - `1` = The server markers will be enabled and visible
+
+---
+
+### **`ShowNameOnServerMarkers`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = All the server markers won't have a name
+  - `1` = All the server markers will display the name they have configured
+
+---
+
+### **`ShowDistanceOnServerMarkers`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The distance under the server markers won't be displayed
+  - `1` = The distance under the server markers will be displayed
+
+---
+
+### **`ServerMarkers`**
+- **Type:** `Array`
+- **Description:** Allow server owners to display server markers on the map. See this tutorial for more explanation.
+
+---
+
+### **`EnableHUDCompass`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The HUD compass will be disabled
+  - `1` = Players will have a HUD compass on the top of their screen
+
+---
+
+### **`NeedCompassItemForHUDCompass`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The Item compass is not needed
+  - `1` = To see the HUD compass, the player need a compass in his inventory
+
+---
+
+### **`NeedGPSItemForHUDCompass`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The Item GPS is not needed
+  - `1` = To see the HUD compass, the player need a GPS in his inventory
+
+---
+
+### **`CompassColor`**
+- **Type:** `Integer`
+- **Description:** The color of the Compass HUD.
+
+**Note:** Use this website to generate the color you want: https://www.shodor.org/~efarrow/trunk/html/rgbint.html
+
+Enter the RGBA values and then click on the button "ARGB → int" to generate the color code you will need.
+
+- **R:** Red
+- **G:** Green
+- **B:** Blue
+- **A:** Opacity from 0 (can't be seen) to 255 (very visible, opaque)
+
+**Note:** You can use this website to generate the RGBA color, however watch out this website generate the A value from 0 to 1 instead of 255!
+
+---
+
+### **`CreateDeathMarker`**
+- **Type:** `Bool`
+- **Description:** Whether or not to create a map marker at the position of your death when you die.
+
+---
+
+### **`PlayerLocationNotifier`**
+- **Type:** `Bool`
+- **Values:**
+  - `0` = The player will not get any notifications telling him where he is and what time is it
+  - `1` = The player will get a dayz mod styled notification with the town name and time and date
